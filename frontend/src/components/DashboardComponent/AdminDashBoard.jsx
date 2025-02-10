@@ -32,7 +32,7 @@ import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import HomeIcon from "@mui/icons-material/Home";
 import { Style } from "@mui/icons-material";
-
+import Home from "./admin/Home";
 // Navigation items
 const NAVIGATION = [
   {
@@ -138,7 +138,7 @@ export default function AdminDashBoard() {
   const renderContent = () => {
     switch (selectedSegment) {
       case "home":
-        return <Typography paragraph>🏠 Home</Typography>;
+        return <Typography paragraph><Home/></Typography>;
       case "usermanagement":
         return <Typography paragraph>👥 User Management Content</Typography>;
       case "contentmanagement":
