@@ -12,7 +12,7 @@ function Home1() {
         <Navbar1 />
         <About />
         <Services />
-        <Projects />
+        {/* <Projects /> */}
         <Locations />
         <ContactUs />  
         

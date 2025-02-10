@@ -43,7 +43,7 @@ const Navbar1 = () => {
           <Navbar.Toggle aria-controls="navbar-nav" />
           <Navbar.Collapse id="navbar-nav">
             <Nav className="ms-auto text-white">
-              {["About", "Services", "Projects", "Locations", "Contact Us"].map(
+              {["About", "Services", "Locations", "Contact Us"].map(
                 (item, index) => (
                   <Nav.Link
                     key={index}

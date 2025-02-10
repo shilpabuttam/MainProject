@@ -36,29 +36,29 @@ import { Style } from "@mui/icons-material";
 // Navigation items
 const NAVIGATION = [
   {
-    segment: "home",
-    title: "Home Management",
+    segment: "User",
+    title: "User Management",
     icon: <HomeIcon />,
   },
-  { segment: "usermanagement", title: "User Management", icon: <PeopleIcon /> },
+  
   {
     segment: "contentmanagement",
     title: "Content Management",
     icon: <EditCalendarIcon />,
   },
   {
-    segment: "reports",
+    segment: "Task Management",
     title: "Reports",
     icon: <BarChartIcon />,
     children: [
       {
         segment: "financial",
-        title: "Financial Reports",
+        title: "Financial Management",
         icon: <DescriptionIcon />,
       },
       {
-        segment: "taskreports",
-        title: "Task Reports",
+        segment: "Notification",
+        title: "Notification",
         icon: <DescriptionIcon />,
       },
     ],
