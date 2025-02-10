@@ -13,8 +13,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const companyInfo = {
   name: "OsTechServices Ltd.",
-  ceo: "Ediga Pavan Kumar",
-  managingDirector: "Satish Kumar",
+  ceo: "xxxxxx",
+  managingDirector: "xxxxxxxxx",
   services: [
     {
       title: "Web Development",
