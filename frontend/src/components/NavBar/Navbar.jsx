@@ -19,7 +19,7 @@ const Navbar1 = () => {
         className="shadow-sm p-2"
       >
         <Container>
-          <Navbar.Brand href="#" className="fw-bold text-black">
+          <Navbar.Brand href="/" className="fw-bold text-black">
             <div style={{display:"flex",alignItems:"center",}}>
             <img
               src={logo}
