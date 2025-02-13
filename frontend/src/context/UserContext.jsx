@@ -1,17 +1,32 @@
 import axios from 'axios';
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState , useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import { AuthContext } from './AuthContext';
 
 export const UserContext = createContext();
 
 const client = axios.create({
-  baseURL: import.meta.env.VITE_BASE_URL, 
+  baseURL: import.meta.env.VITE_BASE_URL,
 });
 
 export const UserContextProvider = ({ children }) => {
   const [employeesData, setEmployeesData] = useState([]);
-  const navigate = useNavigate(); 
+  const { userRole, loginAs } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (userRole) {
+      if (userRole === 'admin') {
+        navigate('/admin');
+      } else if (userRole === 'employee') {
+        navigate('/employee');
+      } else if (userRole === 'thirdParty') {
+        navigate('/third-party');
+      } else {
+        navigate('*');
+      }
+    }
+  }, [userRole, navigate]);
 
   const getEmployees = async () => {
     try {
@@ -19,11 +34,9 @@ export const UserContextProvider = ({ children }) => {
       setEmployeesData(response.data);
       return response.data;
     } catch (error) {
-      console.log(error.response.data.message)
+      console.log(error.response.data.message);
     }
   };
-
-  
 
   const validateEmail = async (email) => {
     try {
@@ -37,30 +50,24 @@ export const UserContextProvider = ({ children }) => {
 
   const Login = async (email, password) => {
     try {
-  
       const request = await client.post('/login', {
         email,
         password,
-      });
-  
-      console.log(request.data.user.role);
-  
-      if (request.status === 200) {
-        localStorage.setItem('token', request.data.token);
-        localStorage.setItem('user', JSON.stringify({ email }));
-        if(request.data.user.role == "admin"){
-          navigate("/admin");
-        }else if(request.data.user.role == "employee"){
-          navigate("/employee");
-        }else if(request.data.user.role == "thirdParty"){
-          navigate("/third-party");
-      }else{
-        navigate("*")
+      },{
+        withCredential : true,
       }
-    }
+    );
+
+      if (request.status === 200) {
+        const role = request.data.user.role; 
+        console.log("-->",role)
+        loginAs(role);
+        localStorage.setItem('token', request.data.token);
+        localStorage.setItem('user', JSON.stringify({ email}));
+      }
     } catch (e) {
       console.error('Login failed:', e);
-      // Handle error gracefully here or show message to user
+
     }
   };
 
@@ -68,8 +75,7 @@ export const UserContextProvider = ({ children }) => {
     employeesData,
     getEmployees,
     validateEmail,
-    Login
-    
+    Login,
   };
 
   return (

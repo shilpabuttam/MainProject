@@ -175,7 +175,7 @@ const Home = () => {
           </Row>
         </Section>
 
-        <Section title="Projects">
+        {/* <Section title="Projects">
           <Row>
             {companyInfo.projects.map((project, index) => (
               <Col md={4} key={index}>
@@ -191,7 +191,7 @@ const Home = () => {
               </Col>
             ))}
           </Row>
-        </Section>
+        </Section> */}
 
         <Section title="Locations">
           <ul className="text-center list-unstyled">

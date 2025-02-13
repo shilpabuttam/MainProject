@@ -1,40 +1,69 @@
 import User from "../models/users.model.js";
+import httpStatus from "http-status";
 
 export const getUsers=async(req,res)=>{
     try {
         const user=await User.find();
+
         if(user.length===0){
             return res.status(400).json({message:"No Users found"});
         }
         res.status(200).json(user);
     }
     catch(err){
-        res.status(500).json({message:err.message});
+        res.status(500).json({message : err.message});
     }
 }
 
 export const postUsers = async (req, res) => {
     try {
-        const user = new User(req.body);
-        const result = await user.save();
-        res.status(201).json({ message: "User created successfully", user: result });
-    } catch (err) {
-        console.error("Error here:", err);
-        res.status(500).json({ error: "Failed to create user", details: err.message });
+        const {email, password, role, firstName, lastName, phone} = req.body;
+
+        if(!email || !password || !role || !firstName || !lastName || !phone){
+            return res.status(httpStatus.BAD_REQUEST).json({message : "Enter All Fields"})
+        }
+
+        const userExists = await User.findOne({email});
+
+        if(userExists){
+            return res.status(httpStatus.CONFLICT).json({message : 'User Already exites'})
+        }
+
+        const salt = await bcrypt.genSalt(10);
+        const hashedPassword = await bcrypt.hash(password,salt);
+
+        const addUser = new User({
+            email,
+            password : hashedPassword,
+            role,
+            firstName,
+            lastName,
+            phone
+        })
+        await addUser.save();
+
+        res.status(httpStatus.CREATED).json({message : 'Registration Completeted'})
+
+    } catch(e){
+        res.status(httpStatus.INTERNAL_SERVER_ERROR).json({message : `Error Occured : ${e.message}`})
     }
 };
+
 export const deleteUsers=async(req,res)=>{
+
     try {
         const user=await User.findByIdAndDelete(req.params.id);
+
         if(!user){
             return res.status(400).json({message:"User not found"});
         }
-        res.send(user);
+        res.status(200).json({message : `Deleted User Successfully ${user.email}`});
     }
     catch(err){
         res.status(500).json({message:err.message});
     }
-};
+}
+
 export const getOneUser = async (req, res) => {
     try {
         const user = await User.findById(req.params.id);
@@ -51,13 +80,24 @@ export const getOneUser = async (req, res) => {
 
 export const updateUser=async(req,res)=>{
     try{
-        let user=await User.updateOne({_id:req.params.id},{$set:req.body});
+        let user = await User.updateOne({_id : req.params.id}, {$set:req.body});
+
         if(!user){
             return res.status(400).json({message:"User not found"});
-            }
-        res.send(user);
+        }
+
+        res.satus(200).json({message : `User Updated Successfully ${user.email}`});
     }
     catch(err){
-        res.status(500).json({message:err.message});
+
+        res.status(500).json({message : err.message});
     }
 }
+
+
+// Here we can add user which means -> Employee , thirdparyAdmin 
+// Here Admin can do CURD Operations based on requirements 
+// Here ThirdParty will be provide company id this company id link to conpany collections 
+// So we can fetch based on thirdparty company id in the companies collection  
+
+// further we can add face recognization for duplications and fraud detection...
