@@ -47,11 +47,11 @@ function App() {
                       </ProtectedRoute>
                     }
                   />
-                  {/* <Route
+                  <Route
                     path="/getemp"
                     element={
-                      <ProtectedRoute allowedRoles={['employee']}>
-                        
+                      <ProtectedRoute allowedRoles={['admin']}>
+                        <EmployeeListPage />
                       </ProtectedRoute>
                     }
                   /> */}

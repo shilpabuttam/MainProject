@@ -1,0 +1,565 @@
+.carousel-container .color-1 {
+  background: url('https://img.freepik.com/free-vector/abstract-technology-particle-background_52683-25766.jpg?t=st=1739267353~exp=1739270953~hmac=3e01196a5b266c43924ebd1685278987b6a2ae7213d9f0daded69435a8bee8e5&w=900') 
+  no-repeat center center/cover;
+}
+
+
+.carousel-container .color-2 {
+  /* background: linear-gradient(45deg, rgb(0, 119, 249), rgb(102, 181, 255)); */
+  background: url("../carouselimages/carosal1.png")
+  no-repeat center center/cover;
+}
+
+.carousel-container .color-3 {
+  /* background: linear-gradient(45deg, rgb(246, 187, 35), rgb(255, 221, 121)); */
+  background: url("../carouselimages/carosal1.png")
+  no-repeat center center/cover;
+}
+
+.carousel-container .color-4 {
+  /* background: linear-gradient(45deg, yellow, rgb(255, 255, 180)); */
+  background: url("../carouselimages/carosal1.png")
+  no-repeat center center/cover;
+}
+
+.carousel-container .color-5 {
+  /* background: linear-gradient(45deg, rgb(255, 162, 255), rgb(230, 120, 255)); */
+  background: url("../carouselimages/carosal1.png")
+  no-repeat center center/cover;
+}
+
+.carousel-container .color-6 {
+  /* background: linear-gradient(45deg, orange, rgb(255, 183, 77)); */
+  background: url("../carouselimages/carosal1.png")
+  no-repeat center center/cover;
+}
+
+.carousel-container .color-7 {
+  /* background: linear-gradient(45deg, rgb(61, 61, 60), rgb(120, 120, 120)); */
+    background: url("../carouselimages/carosal1.png")
+  no-repeat center center/cover;
+}
+
+.carousel-container .color-8 {
+  background: linear-gradient(45deg, rgb(177, 255, 87), rgb(140, 200, 60));
+}
+
+.carousel-container .color-9 {
+  background: linear-gradient(45deg, rgb(255, 0, 225), rgb(180, 0, 150));
+}
+
+.carousel-container .color-10 {
+  background: linear-gradient(45deg, rgb(47, 255, 0), rgb(150, 255, 120));
+}
+
+.carousel-container .color-11 {
+  background: linear-gradient(45deg, orange, rgb(255, 200, 120));
+}
+
+.carousel-container .color-12 {
+  background: linear-gradient(45deg, rgb(21, 255, 0), rgb(100, 255, 100));
+}
+
+.carousel-container .color-9 {
+  background-color: rgb(255, 0, 225);
+}
+
+.carousel-container .color-10 {
+  background-color: rgb(47, 255, 0);
+}
+
+.carousel-container .color-11 {
+  background-color: orange;
+}
+
+.carousel-container .color-12 {
+  background-color: rgb(21, 255, 0);
+}
+
+.carousel-container .swiper-pagination {
+  position: relative;
+  margin-top: 20px;
+}
+
+.carousel-container .swiper-button-prev,
+.carousel-container .swiper-button-next {
+  display: none !important;
+}
+.carousel-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.carousel-container .carousel-minicontainer {
+  border-color: #00b894;
+  /* box-shadow: 0 0 10px #040404; */
+  border-radius: 30px;
+  outline: none;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: visible;
+}
+
+.carousel-container .swiper {
+  width: 80%;
+}
+
+.carousel-container .carousel-div {
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-container .carousel-colorvidiv {
+  height: 25%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transform: scale(3);
+  -webkit-transform: scale(3);
+  -moz-transform: scale(3);
+  -ms-transform: scale(3);
+  -o-transform: scale(3);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.carousel-container .imgdiv {
+  height: 100px;
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-container .imgdiv img {
+  height: 80%;
+  object-fit: cover;
+}
+
+.carousel-container .textdiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 55%;
+  height: 100px;
+  color: white;
+}
+
+.carousel-container .textdiv .carousel-heading {
+  text-align: center;
+  font-size: 1.5vh;
+  margin-right: 5px;
+  text-transform: capitalize;
+  margin-top: 0px;
+}
+
+.carousel-container .carousel-text {
+  width: 80%;
+  margin-bottom: 0px;
+  text-transform: capitalize;
+  font-size: 0.8vh;
+  color: white;
+}
+
+.carousel-container .swiper-slide {
+  visibility: hidden;
+}
+
+.carousel-container .swiper-slide-visible {
+  visibility: visible;
+}
+
+
+.carousel-container .swiper-slide img,
+.carousel-container .swiper-slide .textdiv {
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out;
+  visibility: hidden;
+  -webkit-transition: opacity 0.1s ease-in-out;
+  -moz-transition: opacity 0.1s ease-in-out;
+  -ms-transition: opacity 0.1s ease-in-out;
+  -o-transition: opacity 0.1s ease-in-out;
+}
+
+.carousel-container .swiper-slide-active img,
+.carousel-container .swiper-slide-active .textdiv {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+
+
+
+
+@media screen and (max-width: 1200px) {
+  .carousel-container .carousel-div {
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .carousel-container .carousel-colorvidiv {
+    height: 25%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transform: scale(3);
+    -webkit-transform: scale(3);
+    -moz-transform: scale(3);
+    -ms-transform: scale(3);
+    -o-transform: scale(3);
+  }
+
+  .carousel-container .imgdiv {
+    height: 80px;
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .carousel-container .imgdiv img {
+    height: 80%;
+    object-fit: cover;
+  }
+
+  .carousel-container .textdiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 55%;
+    height: 80px;
+  }
+
+  .carousel-container .textdiv .carousel-heading {
+    text-align: center;
+    font-size: 1.5vh;
+    margin-right: 5px;
+    text-transform: capitalize;
+  }
+
+  .carousel-container .carousel-text {
+    width: 80%;
+
+    text-transform: capitalize;
+    font-size: 0.8vh;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .carousel-container .carousel-div {
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .carousel-container .carousel-colorvidiv {
+    height: 23%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transform: scale(3);
+    -webkit-transform: scale(3);
+    -moz-transform: scale(3);
+    -ms-transform: scale(3);
+    -o-transform: scale(3);
+  }
+
+  .carousel-container .imgdiv {
+    height: 60px;
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .carousel-container .imgdiv img {
+    height: 80%;
+    object-fit: cover;
+  }
+
+  .carousel-container .textdiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 55%;
+    height: 60px;
+  }
+
+  .carousel-container .textdiv .carousel-heading {
+    text-align: center;
+    font-size: 0.8vh;
+    margin-right: 5px;
+    text-transform: capitalize;
+  }
+
+  .carousel-container .carousel-text {
+    width: 80%;
+
+    text-transform: capitalize;
+    font-size: 0.4vh;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .carousel-container .carousel-div {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .carousel-container .carousel-colorvidiv {
+    height: 23%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transform: scale(3);
+    -webkit-transform: scale(3);
+    -moz-transform: scale(3);
+    -ms-transform: scale(3);
+    -o-transform: scale(3);
+  }
+
+  .carousel-container .imgdiv {
+    height: 50px;
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .carousel-container .imgdiv img {
+    height: 80%;
+    object-fit: cover;
+  }
+
+  .carousel-container .textdiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 55%;
+    height: 50px;
+  }
+
+  .carousel-container .textdiv .carousel-heading {
+    text-align: center;
+    font-size: 0.7vh;
+    margin-right: 5px;
+    text-transform: capitalize;
+  }
+
+  .carousel-container .carousel-text {
+    width: 80%;
+
+    text-transform: capitalize;
+    font-size: 0.5vh;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .carousel-container .carousel-div {
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .carousel-container .carousel-colorvidiv {
+  height: 23%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transform: scale(3);
+  -webkit-transform: scale(3);
+  -moz-transform: scale(3);
+  -ms-transform: scale(3);
+  -o-transform: scale(3);
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+}
+
+.carousel-container .imgdiv {
+    height: 30px;
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .carousel-container .imgdiv img {
+    height: 80%;
+    object-fit: cover;
+  }
+
+  .carousel-container .textdiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 55%;
+    height: 40px;
+  }
+
+  .carousel-container .textdiv .carousel-heading {
+    text-align: center;
+    font-size: 0.5vh;
+    margin-right: 5px;
+    text-transform: capitalize;
+    margin-bottom: 3px;
+  }
+
+  .carousel-container .carousel-text {
+    width: 80%;
+    text-transform: capitalize;
+    font-size: 0.3vh;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .carousel-container .carousel-div {
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .carousel-container .carousel-colorvidiv {
+    height: 23%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transform: scale(3);
+    -webkit-transform: scale(3);
+    -moz-transform: scale(3);
+    -ms-transform: scale(3);
+    -o-transform: scale(3);
+  }
+
+  .carousel-container .imgdiv {
+    height: 25px;
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .carousel-container .imgdiv img {
+    height: 80%;
+    object-fit: cover;
+  }
+
+  .carousel-container .textdiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 55%;
+    height: 25px;
+  }
+
+  .carousel-container .textdiv .carousel-heading {
+    text-align: center;
+    font-size: 0.5vh;
+    margin-right: 5px;
+    text-transform: capitalize;
+    margin-bottom: 3px;
+  }
+
+  .carousel-container .carousel-text {
+    width: 80%;
+    text-transform: capitalize;
+    font-size: 0.3vh;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .carousel-container .carousel-div {
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .carousel-container .carousel-colorvidiv {
+    height: 23%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transform: scale(3);
+    -webkit-transform: scale(3);
+    -moz-transform: scale(3);
+    -ms-transform: scale(3);
+    -o-transform: scale(3);
+  }
+
+  .carousel-container .imgdiv {
+    height: 23px;
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .carousel-container .imgdiv img {
+    height: 80%;
+    object-fit: cover;
+  }
+
+  .carousel-container .textdiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 55%;
+    height: 23px;
+  }
+
+  .carousel-container .textdiv .carousel-heading {
+    text-align: center;
+    font-size: 0.5vh;
+    margin-right: 5px;
+    text-transform: capitalize;
+    margin-bottom: 3px;
+  }
+
+  .carousel-container .carousel-text {
+    width: 80%;
+    text-transform: capitalize;
+    font-size: 0.3vh;
+  }
+}

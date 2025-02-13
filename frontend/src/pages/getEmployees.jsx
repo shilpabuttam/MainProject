@@ -21,6 +21,7 @@ const EmployeeListPage = () => {
             <th>Email</th>
             <th>Phone</th>
             <th>Status</th>
+            <th>Role</th>
           </tr>
         </thead>
         <tbody>
@@ -32,11 +33,12 @@ const EmployeeListPage = () => {
                 <td>{employee.email}</td>
                 <td>{employee.phone}</td>
                 <td>{employee.status ? 'Active' : 'Inactive'}</td>
+                <td>{employee.role}</td>
               </tr>
             ))
           ) : (
             <tr>
-              <td colSpan="5" className="text-center">
+              <td colSpan="6" className="text-center">
                 No employees found
               </td>
             </tr>
