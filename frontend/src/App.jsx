@@ -19,6 +19,7 @@ import Unauthorized from "./pages/Unauthorized.jsx";
 import { UserContextProvider } from "./context/UserContext.jsx";
 import EmployeeDashBoard from "./components/DashboardComponent/EmployeeDashBoard.jsx";
 import ThirdPartyDB from "./components/DashboardComponent/ThirdPartyDB.jsx";
+import About from "./pages/AdminContent/About.jsx";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
                   <Route path="/employee" element={<EmployeeDashBoard />} />
                   <Route path="/admin" element={<AdminDashBoard />} />
                   <Route path="/thirdparty" element={<ThirdPartyDB />} />
+                 
                   {/* Protected routes for employees
                   <Route
                     path="/employee"
