@@ -11,7 +11,7 @@ const companySchema = new mongoose.Schema({
     contactEmail: { 
         type: String 
     },
-    adminUserId: { 
+    thirdPartyUserId: { 
         type: mongoose.Schema.Types.ObjectId, 
         ref: "users" 
     }, // Third-Party Admin user
@@ -25,4 +25,9 @@ const companySchema = new mongoose.Schema({
   });
   
   const Company = mongoose.model("Company", companySchema);
-  module.exports = Company;
+  export default Company;
+
+
+  //After logiging the Third Party we should display the a simple form to complete the process 
+
+  // afte login he fill the company details

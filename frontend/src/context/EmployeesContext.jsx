@@ -42,7 +42,9 @@ export const EmployeeContextProvider = ({ children }) => {
     getEmployees,
     employeeLogin,
   };
-
+  console.log(employeesData);
+  console.log(getEmployees);
+  console.log(employeeLogin);
   return (
     <EmployeeContext.Provider value={data}>
       {children}

@@ -1,0 +1,190 @@
+/* General Styles */
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f8f9fa;
+  scroll-behavior: smooth;
+}
+
+/* Loading Screen */
+.loading {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 20%;
+}
+
+/* Navbar */
+.navbar {
+  background: #007bff;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+.navbar ul li {
+  color: white;
+  margin: 0 15px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar ul li:hover {
+  color: #ffd700;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(45deg, #88b9ed, #8191a1);
+  color: rgb(253, 243, 243);
+  text-align: center;
+  /* padding: 80px 20px; */
+  /* border-radius: 10px; */
+  margin-bottom: 50px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.cta-button {
+  padding: 12px 25px;
+  background: #ffd700;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.2s ease;
+}
+
+.cta-button:hover {
+  background: #ffc107;
+  transform: scale(1.05);
+}
+
+/* Sections */
+section {
+  padding: 20px 20px;
+  text-align: center;
+}
+
+/* Content Sections */
+.about, .services, .projects, .locations, .contact {
+  background: white;
+  margin: 20px auto;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.about:hover, .services:hover, .projects:hover, .locations:hover, .contact:hover {
+  transform: scale(1.02);
+}
+
+/* Cards */
+.mission-vision {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.card {
+  background: #007bff;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 45%;
+  text-align: center;
+}
+
+/* Service & Project Cards */
+.service-card, .project-card {
+  background: white;
+  padding: 20px;
+  margin: 15px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+.service-card:hover, .project-card:hover {
+  transform: scale(1.05);
+  background: #f1f1f1;
+}
+
+/* Animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease-in forwards;
+ 
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bounce {
+  animation: bounce 1.5s infinite alternate;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-10px);
+  }
+}
+
+.zoom-in {
+  opacity: 0;
+  transform: scale(0.9);
+  animation: zoomIn 0.8s ease-in forwards;
+}
+
+@keyframes zoomIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Footer */
+.footer {
+  background: #343a40;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.allcontainer{
+  width: 100%;
+  position: relative;
+}
+
+.navbarfixed{
+  width: 100%;
+  z-index: 999999;
+  position: fixed;
+}

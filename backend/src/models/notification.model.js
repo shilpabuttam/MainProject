@@ -5,25 +5,46 @@ const notificationSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId, 
     ref: "users", 
     default: null 
-}, // Target user (or null for system-wide)
+  }, 
+
   message: { 
     type: String, 
     required: true 
-},
+  },
+
   type: { 
     type: String, 
     enum: ["task", "payment", "announcement"], 
-    required: true },
+    required: true 
+  },
+
+  taskId: { 
+    type: mongoose.Schema.Types.ObjectId, 
+    ref: "tasks", 
+    default: null 
+  }, 
+
+  companyId: { 
+    type: mongoose.Schema.Types.ObjectId, 
+    ref: "companies", 
+    default: null 
+  }, 
+
   isRead: { 
     type: Boolean, 
     default: false 
-},
+  },
+
+  global: { 
+    type: Boolean, 
+    default: false 
+  },
+
   createdAt: { 
     type: Date, 
     default: Date.now 
-}
+  }
 });
 
 const Notification = mongoose.model("Notification", notificationSchema);
-
-module.exports = Notification;
+export default Notification;
